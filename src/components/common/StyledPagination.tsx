@@ -34,7 +34,10 @@ export function StyledPagination({
         <PaginationItem>
           <PaginationPrevious
             href="#"
-            onClick={() => onPageChange(Math.max(1, currentPage - 1))}
+            onClick={(e) => {
+              e.preventDefault();
+              onPageChange(Math.max(1, currentPage - 1));
+            }}
           />
         </PaginationItem>
 
@@ -43,7 +46,10 @@ export function StyledPagination({
             <PaginationLink
               href="#"
               isActive={page === currentPage}
-              onClick={() => onPageChange(page)}
+              onClick={(e) => {
+                e.preventDefault();
+                onPageChange(page);
+              }}
               className={cn(
                 "px-3 py-2 rounded-md transition-all",
                 page === currentPage
@@ -65,7 +71,10 @@ export function StyledPagination({
         <PaginationItem>
           <PaginationNext
             href="#"
-            onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
+            onClick={(e) => {
+              e.preventDefault();
+              onPageChange(Math.min(totalPages, currentPage + 1));
+            }}
           />
         </PaginationItem>
       </PaginationContent>
