@@ -181,7 +181,6 @@ export function DateTimeRangePicker({
                 ? dayjs(date).isBefore(dayjs(dateTime.dateFrom)) 
                 : false;
             }}
-            initialFocus
           />
           <div className="flex flex-col sm:flex-row sm:h-[300px] divide-y sm:divide-y-0 sm:divide-x">
             {/* Hours Selector */}
